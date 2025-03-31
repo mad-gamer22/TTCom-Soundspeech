@@ -1,0 +1,4 @@
+accessible-output2
+pygame
+pyprowl
+requests
