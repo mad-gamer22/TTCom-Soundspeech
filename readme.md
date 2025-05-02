@@ -1,9 +1,9 @@
 # TTCom-soundspeech
 
-##Updates in progress
+## Updates in progress
 Since the original developer has abandoned the TTCom-soundspeech project, we have decided to continue it. Some things have already been updated, and will be added to the repo soon.
 Welcome to the TTCom 3.0 trigger.
-This trigger attempts to backport the speech and sound changes from the TTCom 4.0 code modification fork that has very become quickly outdated to work wit the mainstream TTCom 3.0 trigger release from Doug Lee.
+This trigger attempts to backport the speech and sound changes from the TTCom 4.0 code modification fork that has very become quickly outdated to work with the mainstream TTCom 3.0 trigger release from Doug Lee.
 In addition, this trigger fixes a lot of the shortcomings the 4.0 fork itself had.
 
 # Changes
