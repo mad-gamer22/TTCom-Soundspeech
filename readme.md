@@ -37,5 +37,6 @@ This trigger adds the following additional optional server parameters to your co
 * speech=False: disable speech events for a specific server.
 * log=False: disable text logging for a specific server.
 * interrupt=True: Will this server's speech events interrupt currently existing speech? Default: False
+* prowlid=Your Prowl API key
 
 Feel free to make code modifications to this as needed, and also feel free to throw them back at me if you feel like it.
