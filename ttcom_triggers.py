@@ -1,5 +1,4 @@
 import os
-import pyprowl
 import sys
 import random
 import conf
@@ -94,9 +93,6 @@ class Trigger(TriggerBase):
                 for k, v in pairs:
                     if k == "soundpack":
                         self.soundpack = v
-                    if k == "prowlid":
-                        self.prowlid = v
-                        p = pyprowl.Prowl(self.prowlid)
         if self.soundpack == "":
             self.soundpack = "default"
         if self.server.me.userid == self.event.parms.userid:
@@ -108,25 +104,16 @@ class Trigger(TriggerBase):
             play("sounds/" + self.soundpack + "/out.wav")
             output(self.server, self.server.nonEmptyNickname(self.event.parms.userid, False, False) + " " + random_from_file("logouts"))
             out = random_from_file("logouts")
-            p.notify(event="TTCom event from " + self.server.shortname,
-                     description="TTCom status: The user " + self.server.nonEmptyNickname(self.event.parms.userid, False, True) + " " + out,
-                     priority=0, appName="TTCom")
         elif self.event.event in ["messagedeliver"] and not "typing" in self.event.parms.content:
             if self.event.parms.type == 1:
                 play("sounds/" + self.soundpack + "/user.wav")
             else:
                 play("sounds/" + self.soundpack + "/channel.wav")
             pmess = output(self.server, self.server.nonEmptyNickname(self.event.parms.srcuserid, False, False) + ": " + self.event.parms.content)
-            p.notify(event="Message in " + self.server.shortname,
-                     description=self.server.nonEmptyNickname(self.event.parms.srcuserid, False, False) + ": " + self.event.parms.content,
-                     priority=0, appName="TTCom")
         elif self.event.event in ["adduser"]:
             play("sounds/" + self.soundpack + "/join.wav")
             output(self.server, self.server.nonEmptyNickname(self.event.parms.userid, False, False) + " joined " +
                    self.server.channelname(self.event.parms.channelid).strip("/"))
-            p.notify(event="TTCom event from " + self.server.shortname,
-                     description="TTCom status: The user " + self.server.nonEmptyNickname(self.event.parms.userid, False, False) +
-                                 " joined " + self.server.channelname(self.event.parms.channelid).strip("/"), priority=0, appName="TTCom")
         elif self.event.event in ["removeuser"]:
             play("sounds/" + self.soundpack + "/leave.wav")
             output(self.server, self.server.nonEmptyNickname(self.event.parms.userid, False, False) + " left " +
