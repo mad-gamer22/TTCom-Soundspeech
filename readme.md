@@ -9,7 +9,6 @@ In addition, this trigger fixes a lot of the shortcomings the 4.0 fork itself ha
 
 ## Changes
 ### New in 1.13
-* Adds support for the Prowl push notification service. For more info and to obtain an API key, go to [the Prowl website](https://prowlapp.com).
 * Switches from Winsound to Pygame so that sounds can all play at once.
 ### New in 1.12
 * adds an alternative triggers file (ttcom_triggers_alt.py). If the original spits all the login/logout messages at you at once, use this after removing the original and renaming the alt one to ttcom_triggers.py.
@@ -37,6 +36,5 @@ This trigger adds the following additional optional server parameters to your co
 * speech=False: disable speech events for a specific server.
 * log=False: disable text logging for a specific server.
 * interrupt=True: Will this server's speech events interrupt currently existing speech? Default: False
-* prowlid=Your Prowl API key
 
 Feel free to make code modifications to this as needed, and also feel free to throw them back at me if you feel like it.
